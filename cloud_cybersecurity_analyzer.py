@@ -72,11 +72,20 @@ def find_highest_paying_job(jobs: list[dict[str, str]]) -> dict[str, str]:
     return highest_job
 
 
-def print_results(jobs: list[dict[str, str]]) -> None:
-    """Display a summary of the career analysis."""
-    category_averages = average_salary_by_category(jobs)
-    certification_averages = average_salary_by_certification(jobs)
-    highest_job = find_highest_paying_job(jobs)
+def analyze_jobs(jobs: list[dict[str, str]]) -> dict:
+    """Analyze job salaries and return the results in a dictionary."""
+    return {
+        "category_averages": average_salary_by_category(jobs),
+        "certification_averages": average_salary_by_certification(jobs),
+        "highest_job": find_highest_paying_job(jobs)
+    }
+
+
+def print_results(results: dict) -> None:
+    """Display the career analysis results."""
+    category_averages = results["category_averages"]
+    certification_averages = results["certification_averages"]
+    highest_job = results["highest_job"]
 
     print("CLOUD & CYBERSECURITY CAREER ANALYSIS")
     print("-------------------------------------")
@@ -99,7 +108,8 @@ def print_results(jobs: list[dict[str, str]]) -> None:
 def main() -> None:
     """Run the career analysis program."""
     jobs = load_jobs("cloud_cybersecurity_jobs.csv")
-    print_results(jobs)
+    results = analyze_jobs(jobs)
+    print_results(results)
 
 
 if __name__ == "__main__":
