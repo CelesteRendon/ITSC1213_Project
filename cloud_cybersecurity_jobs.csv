@@ -1,0 +1,37 @@
+Job_Title,Category,Experience_Level,Salary_USD,Cloud_Platform,Security_Skill,Certification,Remote_Option
+Cloud Support Specialist,Cloud,Entry,62000,AWS,IAM,AWS Cloud Practitioner,Yes
+Junior Cloud Engineer,Cloud,Entry,72000,AWS,IAM,AWS Solutions Architect Associate,Hybrid
+Cloud Engineer,Cloud,Mid,98000,AWS,Security Groups,AWS Solutions Architect Associate,Yes
+Senior Cloud Engineer,Cloud,Senior,128000,AWS,Cloud Security,AWS Solutions Architect Associate,Yes
+Azure Cloud Engineer,Cloud,Mid,101000,Azure,Entra ID,AZ-104,Hybrid
+Cloud Administrator,Cloud,Entry,70000,Azure,IAM,AZ-104,Yes
+Cloud Architect,Cloud,Senior,152000,AWS,Cloud Security,AWS Solutions Architect Professional,Yes
+Solutions Architect,Cloud,Senior,145000,AWS,IAM,AWS Solutions Architect Associate,Hybrid
+DevOps Engineer,DevOps,Mid,110000,AWS,Secrets Management,Docker,Yes
+Senior DevOps Engineer,DevOps,Senior,138000,Azure,Cloud Security,Kubernetes,Yes
+Platform Engineer,DevOps,Mid,116000,AWS,IAM,Terraform,Hybrid
+Site Reliability Engineer,DevOps,Mid,122000,GCP,Monitoring,Kubernetes,Yes
+Infrastructure Engineer,Infrastructure,Mid,94000,Azure,Network Security,Network+,Hybrid
+Systems Administrator,Infrastructure,Entry,68000,Azure,Active Directory,Network+,No
+Senior Systems Administrator,Infrastructure,Senior,99000,AWS,Active Directory,Security+,Hybrid
+Network Administrator,Infrastructure,Entry,65000,None,Firewalls,Network+,No
+Network Engineer,Infrastructure,Mid,92000,AWS,Network Security,CCNA,Hybrid
+Infrastructure Analyst,Infrastructure,Entry,74000,Azure,IAM,Security+,Hybrid
+Security Analyst,Cybersecurity,Entry,76000,AWS,SIEM,Security+,Hybrid
+SOC Analyst,Cybersecurity,Entry,70000,Azure,SIEM,Security+,Yes
+Cybersecurity Analyst,Cybersecurity,Mid,96000,AWS,Incident Response,Security+,Yes
+Cloud Security Analyst,Cybersecurity,Mid,108000,AWS,Cloud Security,Security+,Yes
+Security Engineer,Cybersecurity,Mid,118000,Azure,Cloud Security,CySA+,Hybrid
+Cloud Security Engineer,Cybersecurity,Senior,142000,AWS,Cloud Security,AWS Security Specialty,Yes
+Cybersecurity Engineer,Cybersecurity,Senior,132000,AWS,Incident Response,CySA+,Hybrid
+Penetration Tester,Cybersecurity,Mid,105000,None,Penetration Testing,PenTest+,Yes
+Security Operations Engineer,Cybersecurity,Mid,112000,Azure,SIEM,CySA+,Hybrid
+Information Security Specialist,Cybersecurity,Mid,103000,AWS,Risk Management,Security+,No
+IAM Engineer,Cybersecurity,Mid,115000,Azure,IAM,Security+,Yes
+Network Security Engineer,Cybersecurity,Senior,126000,AWS,Firewalls,CCNA,Hybrid
+DevSecOps Engineer,DevOps,Senior,140000,AWS,Cloud Security,Security+,Yes
+Cloud Infrastructure Engineer,Infrastructure,Mid,106000,AWS,Network Security,Terraform,Yes
+GCP Cloud Engineer,Cloud,Mid,104000,GCP,IAM,Google Associate Cloud Engineer,Yes
+Cloud Operations Analyst,Cloud,Entry,75000,AWS,Monitoring,AWS Cloud Practitioner,Hybrid
+Security Administrator,Cybersecurity,Entry,73000,Azure,Access Control,Security+,No
+Incident Response Analyst,Cybersecurity,Mid,100000,AWS,Incident Response,CySA+,Yes
