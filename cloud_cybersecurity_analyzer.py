@@ -7,7 +7,7 @@ No Pandas, Polars, or similar data-analysis libraries.
 """
 
 import csv
-
+from career_analysis import average_salary_by_field
 
 def average_salary_by_field(
     jobs: list[dict[str, str]], field: str
