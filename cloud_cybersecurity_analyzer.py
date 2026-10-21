@@ -9,6 +9,32 @@ No Pandas, Polars, or similar data-analysis libraries.
 import csv
 
 
+def average_salary_by_field(
+    jobs: list[dict[str, str]], field: str
+) -> dict[str, float]:
+    """Calculate average salaries grouped by a selected field."""
+    salary_totals = {}
+    job_counts = {}
+
+    for job in jobs:
+        group = job[field]
+        salary = int(job["Salary_USD"])
+
+        if group not in salary_totals:
+            salary_totals[group] = 0
+            job_counts[group] = 0
+
+        salary_totals[group] += salary
+        job_counts[group] += 1
+
+    averages = {}
+
+    for group in salary_totals:
+        averages[group] = salary_totals[group] / job_counts[group]
+
+    return averages
+
+
 def load_jobs(filename: str) -> list[dict[str, str]]:
     """Read job records from a CSV file and return a list of dictionaries."""
     jobs = []
@@ -24,50 +50,12 @@ def load_jobs(filename: str) -> list[dict[str, str]]:
 
 def average_salary_by_category(jobs: list[dict[str, str]]) -> dict[str, float]:
     """Calculate the average salary for each job category."""
-    salary_totals = {}
-    job_counts = {}
-
-    for job in jobs:
-        category = job["Category"]
-        salary = int(job["Salary_USD"])
-
-        if category not in salary_totals:
-            salary_totals[category] = 0
-            job_counts[category] = 0
-
-        salary_totals[category] += salary
-        job_counts[category] += 1
-
-    averages = {}
-
-    for category in salary_totals:
-        averages[category] = salary_totals[category] / job_counts[category]
-
-    return averages
+    return average_salary_by_field(jobs, "Category")
 
 
 def average_salary_by_certification(jobs: list[dict[str, str]]) -> dict[str, float]:
     """Calculate the average salary associated with each certification."""
-    salary_totals = {}
-    job_counts = {}
-
-    for job in jobs:
-        certification = job["Certification"]
-        salary = int(job["Salary_USD"])
-
-        if certification not in salary_totals:
-            salary_totals[certification] = 0
-            job_counts[certification] = 0
-
-        salary_totals[certification] += salary
-        job_counts[certification] += 1
-
-    averages = {}
-
-    for certification in salary_totals:
-        averages[certification] = salary_totals[certification] / job_counts[certification]
-
-    return averages
+    return average_salary_by_field(jobs, "Certification")
 
 
 def find_highest_paying_job(jobs: list[dict[str, str]]) -> dict[str, str]:
