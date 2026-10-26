@@ -7,7 +7,9 @@ No Pandas, Polars, or similar data-analysis libraries.
 """
 
 import csv
-from career_analysis import average_salary_by_field
+
+from career_analysis import average_salary_by_field, sort_jobs_by_salary
+
 
 def average_salary_by_field(
     jobs: list[dict[str, str]], field: str
@@ -91,7 +93,10 @@ def analyze_jobs(jobs: list[dict[str, str]]) -> dict:
     }
 
 
-def print_results(results: dict) -> None:
+
+
+def print_results(results: dict, jobs: list[dict[str, str]]) -> None:
+
     """Display the career analysis results."""
     category_averages = results["category_averages"]
     certification_averages = results["certification_averages"]
@@ -114,12 +119,18 @@ def print_results(results: dict) -> None:
         print(f"Certification: {highest_job['Certification']}")
         print(f"Cloud platform: {highest_job['Cloud_Platform']}")
 
+   
+    print("\nTop 5 Highest-Paying Jobs:")
 
+    sorted_jobs = sort_jobs_by_salary(jobs)
+
+    for job in sorted_jobs[:5]:
+        print(f"{job['Job_Title']}: ${int(job['Salary_USD']):,}") 
 def main() -> None:
     """Run the career analysis program."""
     jobs = load_jobs("cloud_cybersecurity_jobs.csv")
     results = analyze_jobs(jobs)
-    print_results(results)
+    print_results(results,jobs)
 
 
 if __name__ == "__main__":

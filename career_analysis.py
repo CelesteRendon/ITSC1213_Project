@@ -23,3 +23,16 @@ def average_salary_by_field(
         averages[group] = total / count
 
     return averages
+
+
+def sort_jobs_by_salary(jobs: list[dict[str, str]]) -> list[dict[str, str]]:
+    """Sort jobs from highest salary to lowest salary."""
+
+    if not jobs:
+        raise ValueError("The jobs list cannot be empty.")
+
+    return sorted(
+        jobs,
+        key=lambda job: int(job["Salary_USD"]),
+        reverse=True
+    )
