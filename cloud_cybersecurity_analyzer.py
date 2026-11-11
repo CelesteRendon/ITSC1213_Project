@@ -1,12 +1,13 @@
 """
 Cloud & Cybersecurity Career Analyzer
-Initial AI-generated project code.
-
-Uses only Python's built-in csv module.
-No Pandas, Polars, or similar data-analysis libraries.
+Phase 4: Pandas Data Analysis and Visualization
 """
 
+
 import csv
+import json
+import pandas as pd
+import matplotlib.pyplot as plt
 
 from career_analysis import average_salary_by_field, sort_jobs_by_salary
 
@@ -50,6 +51,11 @@ def load_jobs(filename: str) -> list[dict[str, str]]:
 
     return jobs
 
+
+def load_jobs_dataframe(filename: str) -> pd.DataFrame:
+    """Load job data from a CSV file into a pandas DataFrame."""
+    df = pd.read_csv(filename)
+    return df
 
 def average_salary_by_category(jobs: list[dict[str, str]]) -> dict[str, float]:
     """Calculate the average salary for each job category."""
@@ -125,12 +131,40 @@ def print_results(results: dict, jobs: list[dict[str, str]]) -> None:
     sorted_jobs = sort_jobs_by_salary(jobs)
 
     for job in sorted_jobs[:5]:
+    
         print(f"{job['Job_Title']}: ${int(job['Salary_USD']):,}") 
+def save_results(results: dict) -> None:
+    """Save the career analysis results to a JSON file."""
+    with open("results.json", "w", encoding="utf-8") as file:
+        json.dump(results, file, indent=4)
+
+def plot_salary_by_category(df: pd.DataFrame) -> None:
+    """Create a bar chart of average salaries by job category."""
+
+    average_salaries = df.groupby("Category")["Salary_USD"].mean()
+
+    average_salaries.plot(kind="bar")
+
+    plt.title("Average Salary by Career Category")
+    plt.xlabel("Career Category")
+    plt.ylabel("Average Salary (USD)")
+    plt.xticks(rotation=0)
+    plt.tight_layout()
+    plt.savefig("average_salary_by_category.png")
+    plt.show()        
+
 def main() -> None:
     """Run the career analysis program."""
     jobs = load_jobs("cloud_cybersecurity_jobs.csv")
+
+    df = load_jobs_dataframe("cloud_cybersecurity_jobs.csv")
+    print("\nPANDAS DATAFRAME PREVIEW")
+    print(df.head())
+
     results = analyze_jobs(jobs)
-    print_results(results,jobs)
+    print_results(results, jobs)
+    save_results(results)
+    plot_salary_by_category(df)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,34 @@
+{
+    "category_averages": {
+        "Cloud": 100700.0,
+        "DevOps": 125200.0,
+        "Infrastructure": 85428.57142857143,
+        "Cybersecurity": 105428.57142857143
+    },
+    "certification_averages": {
+        "AWS Cloud Practitioner": 68500.0,
+        "AWS Solutions Architect Associate": 110750.0,
+        "AZ-104": 85500.0,
+        "AWS Solutions Architect Professional": 152000.0,
+        "Docker": 110000.0,
+        "Kubernetes": 130000.0,
+        "Terraform": 111000.0,
+        "Network+": 75666.66666666667,
+        "Security+": 95400.0,
+        "CCNA": 109000.0,
+        "CySA+": 115500.0,
+        "AWS Security Specialty": 142000.0,
+        "PenTest+": 105000.0,
+        "Google Associate Cloud Engineer": 104000.0
+    },
+    "highest_job": {
+        "Job_Title": "Cloud Architect",
+        "Category": "Cloud",
+        "Experience_Level": "Senior",
+        "Salary_USD": "152000",
+        "Cloud_Platform": "AWS",
+        "Security_Skill": "Cloud Security",
+        "Certification": "AWS Solutions Architect Professional",
+        "Remote_Option": "Yes"
+    }
+}
